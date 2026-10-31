@@ -23,6 +23,8 @@ Vite e exibe o status retornado pela API.
 │   └── style.css       # estilos da página
 ├── server/
 │   └── index.js        # API Express com GET /api/health
+├── database/
+│   └── schema.sql      # cria o banco da ONG (MySQL 8)
 ├── .env.example        # modelo das variáveis de ambiente
 └── package.json        # scripts e dependências
 ```
@@ -31,6 +33,7 @@ Vite e exibe o status retornado pela API.
 
 - [Node.js](https://nodejs.org/) 20 ou superior (testado com Node 26)
 - npm (acompanha o Node.js)
+- [MySQL](https://dev.mysql.com/downloads/) 8 (opcional, apenas para o banco)
 
 ## Como rodar o projeto
 
@@ -90,6 +93,18 @@ O arquivo `.env` está no `.gitignore`; apenas o `.env.example` é versionado.
 
 A rota é acessada pelo front-end em `/api/health`; o Vite encaminha a chamada
 para o servidor Express definido em `PORT` (proxy configurado em `vite.config.ts`).
+
+## Banco de dados
+
+O schema fica em `database/schema.sql` e recria o banco do zero (`DROP DATABASE`
+seguido de `CREATE DATABASE`), então pode ser executado quantas vezes for preciso:
+
+```bash
+mysql -h 127.0.0.1 -uroot -p < database/schema.sql
+```
+
+Tabelas criadas: `familia`, `beneficiario`, `voluntario`, `atividade`, `turma`,
+`matricula` (N:N entre beneficiário e turma) e `frequencia`.
 
 ## Scripts
 
