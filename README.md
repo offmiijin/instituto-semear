@@ -37,7 +37,7 @@ Vite e exibe o status retornado pela API.
 1. Clone o repositório e entre na pasta:
 
    ```bash
-   git clone https://github.com/seu-usuario/instituto-semear.git
+   git clone https://github.com/offmiijin/instituto-semear.git
    cd instituto-semear
    ```
 
