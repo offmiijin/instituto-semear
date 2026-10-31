@@ -3,6 +3,8 @@
   --fg: #1f2a25;
   --muted: #5d6b63;
   --accent: #2f7d4f;
+  --card: #ffffff;
+  --border: #dfe3dc;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--fg);
   background-color: var(--bg);
@@ -43,5 +45,38 @@ h1 {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.6;
+  color: var(--muted);
+}
+
+.card {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.status {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.status.ok {
+  color: var(--accent);
+}
+
+.status.error {
+  color: #b3261e;
+}
+
+.muted {
+  margin: 0;
+  font-size: 0.95rem;
   color: var(--muted);
 }
